@@ -13,7 +13,7 @@ jobs:
       - run: aws sts get-caller-identity
 workflows:
   workflow1:
-    jobs:
-      build:
-        context: test
+    - jobs:
+        build:
+          context: test
 
