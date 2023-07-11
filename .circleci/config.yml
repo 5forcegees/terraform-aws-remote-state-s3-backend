@@ -1,16 +1,19 @@
-version: 2.1
-
 workflows:
   jobs:
-    jobs:
-      - jobs:
-          resource_class: small
-          context: test
-          docker:
-            - image: cimg/aws:2023.06
-          steps:
-            - checkout
-            - run: aws --version
-            - run: npm --version
-            - run: env
-            - run: aws sts get-caller-identity
+    build:
+      context: test
+
+
+jobs:
+  build:
+    resource_class: small
+    context: test
+    docker:
+      - image: cimg/aws:2023.06
+    steps:
+      - checkout
+      - run: aws --version
+      - run: npm --version
+      - run: env
+      - run: aws sts get-caller-identity
+
