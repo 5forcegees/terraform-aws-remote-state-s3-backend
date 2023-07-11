@@ -8,5 +8,6 @@ jobs:
       - checkout
       - run: aws --version
       - run: npm --version
+      - run: env
       - run: aws sts get-caller-identity
 
