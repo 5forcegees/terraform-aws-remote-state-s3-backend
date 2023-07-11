@@ -1,7 +1,8 @@
+version: 2.1
 
 workflows:
   jobs:
-    build:
+    test:
       - test:
           resource_class: small
           context: test
