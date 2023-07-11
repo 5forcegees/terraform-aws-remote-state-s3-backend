@@ -5,3 +5,4 @@ jobs:
     steps:
       - checkout
       - run: aws --version
+      - run: npm --version
