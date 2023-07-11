@@ -3,7 +3,7 @@ version: 2.1
 workflows:
   jobs:
     jobs:
-      - test:
+      - jobs:
           resource_class: small
           context: test
           docker:
