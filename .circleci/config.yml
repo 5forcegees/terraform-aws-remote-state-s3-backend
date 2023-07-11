@@ -1,0 +1,7 @@
+jobs:
+  build:
+    docker:
+      - image: cimg/aws:2023.06
+    steps:
+      - checkout
+      - run: aws --version
