@@ -61,7 +61,7 @@ variable "kms_key_enable_key_rotation" {
 variable "enable_replication" {
   description = "Set this to true to enable S3 bucket replication in another region"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "state_bucket_prefix" {
