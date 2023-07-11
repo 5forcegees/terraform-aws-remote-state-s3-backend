@@ -1,5 +1,6 @@
 jobs:
   build:
+    resource_class: small
     docker:
       - image: cimg/aws:2023.06
     steps:
@@ -7,4 +8,4 @@ jobs:
       - run: aws --version
       - run: npm --version
       - run: aws sts get-caller-identity
-      
+
