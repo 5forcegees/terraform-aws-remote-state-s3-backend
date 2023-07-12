@@ -1,6 +1,14 @@
 version: 2.1
 
 jobs:
+  verify_aws_access:
+    resource_class: small
+    docker: 
+      - image: cimg/aws:2023.06
+    steps:
+      - checkout
+      - run: aws sts get-caller-identity
+
   build:
     resource_class: small
     docker:
@@ -10,10 +18,15 @@ jobs:
       - run: aws --version
       - run: npm --version
       - run: env
-      - run: aws sts get-caller-identity
 workflows:
-  workflow1:
+  verify_aws_access:
+    jobs:
+      - verify_aws_access:
+          context: test
+  build:
     jobs:
       - build:
           context: test
+          requires: verify_aws_access
+
 
