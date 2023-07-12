@@ -23,10 +23,6 @@ workflows:
     jobs:
       - verify_aws_access:
           context: test
-  build:
-    jobs:
-      - build:
-          context: test
-          requires: verify_aws_access
+
 
 
